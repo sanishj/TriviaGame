@@ -62,17 +62,18 @@ $(document).ready(function() {
 
             var answerString = '';
 
-            questionString = '<div class="question text-left">' + questions[i].question + '</div>';
+            questionString = '<label class="question text-left">' + questions[i].question + '</label>';
 
             for (var a = 0; a < questions[i].answer.length; a++) {
                 answerString +=
-                    '<input class="answer js-check" type="radio" name="' + i +
+                    '<input class="answer js-check  text-left" type="radio" name="' + i +
                     '" data-name="' + questions[i].answer[a] +
                     '">' + questions[i].answer[a] +
                     '</input>';
             }
 
-            $('#questions').append('<div class="question">' + questionString + '<div class="answer">' + answerString + '</div>' + '</div>');
+            $('#questions').append('<label class="question  text-left">' + questionString + 
+                '<div class="answer">' + answerString + '</div>' + '</label>');
         }
     }
 });
