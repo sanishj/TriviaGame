@@ -45,11 +45,11 @@ $(document).ready(function() {
             if (answerChosen === correct) {
                 alert("awesome");
                 right++;
-                alert(right);
+                // alert(right);
             } else {
                 alert("try again");
                 wrong++;
-                alert(wrong);
+                // alert(wrong);
             }
 
         });
@@ -72,7 +72,7 @@ $(document).ready(function() {
                     '</input>';
             }
 
-            $('#questions').append('<div class="question">' + questionString + answerString + '</div>');
+            $('#questions').append('<div class="question">' + questionString + '<div class="answer">' + answerString + '</div>' + '</div>');
         }
     }
 });

@@ -21,4 +21,6 @@ font-family: 'Audiowide', cursive;
 
 .answer {
     margin-left: 12px;
+    text-align: left;
+    padding: 5px;
 }
