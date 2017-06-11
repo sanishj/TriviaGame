@@ -17,22 +17,26 @@
 </head>
 
 <body>
-    <div class="container text-center">
+    <div class="container">
         <!-- top section -->
-        <div class="jumbotron">
+        <div class="jumbotron text-center">
             <h1 class="text-center">The Cell Phone Trivia Questions</h1>
             <!-- Start button -->
             <button id="start" class="start-button btn btn-primary btn-lg raised">start</button>
         </div>
         <!-- Middle Section-->
-        <!-- <div class="col-md-12 text-center jumbotron"> -->
-            <!-- question placeholder -->
-            <div class="alert alert-info">
-                <div class="form">
-                    <label id="questions" class="question-box control-label">
-                    </label>
-                </div>
+        <!-- Timer -->
+        <div class="alert alert-danger text-center">
+            <strong>Timer</strong>
+            <div id="time"></div>
+        </div>
+        <!-- question section -->
+        <div class="alert alert-info">
+            <div class="form">
+                <label id="questions" class="question-box control-label">
+                </label>
             </div>
+        </div>
         <!-- Footer Section -->
         <div class="col-md-12 text-center jumbotron">
             <footer class="footer">
