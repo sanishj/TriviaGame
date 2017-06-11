@@ -34,6 +34,7 @@ $(document).ready(function() {
     /* button click */
     $('#start').on('click', function() {
         startGame();
+        countdown();
         $('.js-check').on('click', function() {
             var answerChosen = ($(this).attr('data-name'));
             var correct = (questions[this.name].correctAnswer);
@@ -61,7 +62,7 @@ $(document).ready(function() {
 
             for (var a = 0; a < questions[i].answer.length; a++) {
                 answerString +=
-                    '<label class="radio answer">' + 
+                    '<label class="radio answer">' +
                     '<input class="answer js-check" type="radio" name="' + i +
                     '" data-name="' + questions[i].answer[a] +
                     '">' + questions[i].answer[a] +
@@ -69,8 +70,32 @@ $(document).ready(function() {
                     '</label>';
             }
 
-            $('#questions').append('<label class="question">' + questionString + 
+            $('#questions').append('<label class="question">' + questionString +
                 '<div class="answer">' + answerString + '</div>' + '</label>');
         }
     }
+
+    // Timer
+    function startTimer(duration, display) {
+        var timer = duration,
+            minutes,
+            seconds;
+        setInterval(function() {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    function countdown() {
+        var oneMinutes = 60 * 1,
+        // $('#time').append('<div class="timer">' + oneMinutes + '</div>');
+            display = document.querySelector("#time");
+        startTimer(oneMinutes, display);
+    };
 });
