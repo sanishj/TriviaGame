@@ -21,11 +21,6 @@ $(document).ready(function() {
         'correctAnswer': "A device which allows users to install and run applications of their choice."
     }, {
         'questionNum': 4,
-        'question': 'What is the best definition of the word "cell" as it relates to cellular phones?',
-        'answer': ['A nearby base station', 'A radio', 'A telephone pole', 'Any type of telephone'],
-        'correctAnswer': 'A radio'
-    }, {
-        'questionNum': 5,
         'question': "Which Mobile Operating System has the world's largest user base?",
         'answer': ["Apple's IOS", "Microsoft's Windows Mobile", "Research in Motion's BB10", "Google's Android OS"],
         'correctAnswer': "Google's Android OS"
@@ -43,7 +38,7 @@ $(document).ready(function() {
             var answerChosen = ($(this).attr('data-name'));
             var correct = (questions[this.name].correctAnswer);
             if (answerChosen === correct) {
-                alert("awesome");
+                alert("Correct!!");
                 right++;
                 // alert(right);
             } else {
@@ -62,17 +57,19 @@ $(document).ready(function() {
 
             var answerString = '';
 
-            questionString = '<label class="question text-left">' + questions[i].question + '</label>';
+            questionString = '<label class="question">' + questions[i].question + '</label>';
 
             for (var a = 0; a < questions[i].answer.length; a++) {
                 answerString +=
-                    '<input class="answer js-check  text-left" type="radio" name="' + i +
+                    '<label class="radio answer">' + 
+                    '<input class="answer js-check" type="radio" name="' + i +
                     '" data-name="' + questions[i].answer[a] +
                     '">' + questions[i].answer[a] +
-                    '</input>';
+                    '</input>' +
+                    '</label>';
             }
 
-            $('#questions').append('<label class="question  text-left">' + questionString + 
+            $('#questions').append('<label class="question">' + questionString + 
                 '<div class="answer">' + answerString + '</div>' + '</label>');
         }
     }
