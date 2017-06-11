@@ -1,0 +1,24 @@
+/* Color Palette
+#2B2D42 - dark blue
+#8D99AE - light blue
+#EDF2F4 - blue/white
+#EF233C - red
+FontFamily
+font-family: 'Bungee', cursive;
+font-family: 'Audiowide', cursive;
+*/
+
+
+/*.panal {
+    padding: 50px;
+    display: none;
+}
+*/
+
+.question {
+    margin-bottom: 24px;
+}
+
+.answer {
+    margin-left: 12px;
+}
